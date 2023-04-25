@@ -1,0 +1,13 @@
+[package]
+name = "dsa-rust"
+description = "A boiler plate for testing some data structure and algorithm, run manual test, stress test, benchmark against your function"
+version = "0.0.1"
+authors = ["neo <neo.mxn0@gmail.com>"]
+edition = "2018"
+
+[lib]
+doctest = false
+test = true
+
+[dependencies]
+rand = "0.8.5"

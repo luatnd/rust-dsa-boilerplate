@@ -1,0 +1,3 @@
+#![feature(test)]
+
+fn main() {}
