@@ -31,7 +31,7 @@ pub fn manual_test<Input, Output>(
   for case in cases {
     println!("\n[{}_manual] case: {:?}", id, case.input);
     assert_eq!(get_result(case.input), case.output);
-    println!("[{}_manual] actual = expected = {:?}", id, case.output);
+    println!("[{}_manual] OK: actual = expected = {:?}", id, case.output);
   }
 }
 
