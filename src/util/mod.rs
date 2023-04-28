@@ -10,3 +10,4 @@ pub mod point;
 pub mod testing;
 pub mod array;
 pub mod number;
+pub mod string;
