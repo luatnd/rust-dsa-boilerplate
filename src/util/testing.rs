@@ -31,7 +31,7 @@ pub fn manual_test<Input, Output>(
   for case in cases {
     println!("\n[{}_manual] case: {:?}", id, case.input);
     let actual = get_result(case.input);
-    assert_eq!(actual, case.output, "Failed: expect={:?} actual={:?}", case.output, actual);
+    assert_eq!(actual, case.output, "Failed: actual={:?} expect={:?}", actual, case.output);
     println!("[{}_manual] OK: actual = expected = {:?}", id, case.output);
   }
 }
@@ -81,7 +81,7 @@ pub fn stress_test<Input, Output>(
     let expected: Output = get_trusted_result(input.clone());
     let actual = get_result(input.clone());
 
-    assert_eq!(expected, actual, "Failed: expect={:?} actual={:?}", expected, actual);
+    assert_eq!(actual, expected, "Failed: actual={:?} expect={:?}", actual, expected);
     println!("[{}_stress] OK", id);
   }
 }
