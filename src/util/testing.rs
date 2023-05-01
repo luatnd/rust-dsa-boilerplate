@@ -36,6 +36,25 @@ pub fn manual_test<Input, Output>(
   }
 }
 
+pub fn manual_test_full<Input, Output>(
+  id: &str,
+  cases: Vec<TestCase<Input, Output>>,
+  get_result: fn(Input, Output) -> Output,
+) where Input: Debug,
+        Input: Clone,
+        Output: Debug,
+        Output: PartialEq,
+        Output: Eq,
+        Output: Clone,
+{
+  for case in cases {
+    println!("\n[{}_manual] case: {:?}", id, case.input);
+    let actual = get_result(case.input, case.output.clone());
+    assert_eq!(actual, case.output, "Failed: actual={:?} expect={:?}", actual, case.output);
+    println!("[{}_manual] OK: actual = expected = {:?}", id, case.output);
+  }
+}
+
 //
 // TODO: Change to #[bench] if rust test is stable
 // Because of its unstable so we need to benchmark ourself
